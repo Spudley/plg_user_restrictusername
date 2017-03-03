@@ -16,10 +16,6 @@ The plugin has a number of configuration parameters that allow you to specify ex
 Version History
 ----------------
 * 1.0.0     2016-07-03: Initial release.
-* 1.0.1     2016-07-14: Bug fixes: Now works in all three scenarios.
-* 2.0.0     2016-12-13: Made it work with the "Administrator" option for new account activation.
-* 2.1.0     2017-01-30: Added ability to send activation emails.
-* 2.2.0     2017-02-06: Activation emails can now go to either the end user or to admin users (or both).
 
 
 Installation
