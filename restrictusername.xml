@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.6" type="plugin" group="user" method="upgrade">
+	<name>PLG_USER_RESTRICTUSERNAME_NAME</name>
+    <version>2.3.0</version>
+    <creationDate>December 2016</creationDate>
+    <author>Simon Champion</author>
+    <authorEmail>simon@simonchampion.net</authorEmail>
+    <authorUrl></authorUrl>
+    <copyright>(C) 2016 Simon Champion</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <description>PLG_USER_RESTRICTUSERNAME_DESCRIPTION</description>
+
+	<files>
+        <filename>index.html</filename>
+		<filename plugin="restrictusername">restrictusername.php</filename>
+	</files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_user_restrictusername.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_user_restrictusername.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field type="number" name="minLength" default="6" min="2"
+                    label="PLG_USER_RESTRICTUSERNAME_MIN_LABEL" description="PLG_USER_RESTRICTUSERNAME_MIN_DESC" />
+                <field type="number" name="maxLength" default="50"
+                    label="PLG_USER_RESTRICTUSERNAME_MAX_LABEL" description="PLG_USER_RESTRICTUSERNAME_MAX_DESC" />
+
+                <field type="text" name="userDefinedErrorMessage" default=""
+                    label="PLG_USER_RESTRICTUSERNAME_CUSTOM_ERR_LABEL" description="PLG_USER_RESTRICTUSERNAME_CUSTOM_ERR_DESC" />
+
+                <field name="useOwnRegex" type="radio" class="btn-group btn-group-yesno" default="0"
+                    description="PLG_USER_RESTRICTUSERNAME_USE_CUSTOM_REGEX_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_USE_CUSTOM_REGEX_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field type="text" name="userDefinedRegex" default="" showon="useOwnRegex:1"
+                    label="PLG_USER_RESTRICTUSERNAME_CUSTOM_REGEX_LABEL" description="PLG_USER_RESTRICTUSERNAME_CUSTOM_REGEX_DESC" />
+
+                <field name="allowSpaces" type="radio" class="btn-group btn-group-yesno" default="0" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_SPACES_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_SPACES_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowUpper" type="radio" class="btn-group btn-group-yesno" default="1" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_UPPER_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_UPPER_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowLower" type="radio" class="btn-group btn-group-yesno" default="1" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_LOWER_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_LOWER_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowNumbers" type="radio" class="btn-group btn-group-yesno" default="1" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_NUMBERS_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_NUMBERS_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowDots" type="radio" class="btn-group btn-group-yesno" default="1" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_DOTS_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_DOTS_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowDashes" type="radio" class="btn-group btn-group-yesno" default="1" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_DASHES_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_DASHES_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowCyrillic" type="radio" class="btn-group btn-group-yesno" default="0" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_CYRILLIC_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_CYRILLIC_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowArabic" type="radio" class="btn-group btn-group-yesno" default="0" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_ARABIC_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_ARABIC_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowHebrew" type="radio" class="btn-group btn-group-yesno" default="0" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_HEBREW_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_HEBREW_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowLatin" type="radio" class="btn-group btn-group-yesno" default="0" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_LATIN_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_LATIN_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="allowSymbols" type="radio" class="btn-group btn-group-yesno" default="0" showon="useOwnRegex:0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_SYMBOLS_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_SYMBOLS_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field type="text" name="userDefinedSymbols" default="!&#34;£$%^&amp;*(){}[]':;~#&gt;&lt;,/?\|+=_" showon="useOwnRegex:0[AND]allowSymbols:1"
+                    label="PLG_USER_RESTRICTUSERNAME_CUSTOM_SYMBOLS_LABEL" description="PLG_USER_RESTRICTUSERNAME_CUSTOM_SYMBOLS_DESC" />
+
+                <field name="allowEmail" type="radio" class="btn-group btn-group-yesno" default="0"
+                    description="PLG_USER_RESTRICTUSERNAME_ALLOW_EMAIL_DESC"
+                    label="PLG_USER_RESTRICTUSERNAME_ALLOW_EMAIL_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+            </fieldset>
+
+        </fields>
+    </config>
+</extension>
