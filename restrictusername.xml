@@ -131,4 +131,7 @@
 
         </fields>
     </config>
+    <updateservers>
+        <server type="extension" priority="2" name="Notify Activation Updates">https://raw.githubusercontent.com/Spudley/plg_user_restrictusername/master/update.xml</server>
+    </updateservers>
 </extension>

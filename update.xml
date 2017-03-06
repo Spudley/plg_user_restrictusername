@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>Restrict Username</name>
+		<description>Limit what characters are permitted in a username</description>
+		<element>restrictusername</element>
+		<type>plugin</type>
+        <folder>user</folder>
+		<version>1.0.0</version>
+		<client>0</client>
+		<infourl title="Notify Activation plugin">https://github.com/Spudley/plg_user_restrictusername/releases/tag/1.0.1</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/Spudley/plg_user_restrictusername/archive/1.0.1.zip</downloadurl>
+		</downloads>
+		<targetplatform name="joomla" version="3.[56789]" />
+        <php_minimum>5.4.0</php_minimum>
+	</update>
+</updates>
