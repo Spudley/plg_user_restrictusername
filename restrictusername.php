@@ -50,7 +50,7 @@ class plgUserRestrictusername extends JPlugin
 
         $max = (int)$this->params->get('maxLength', 0);
         $min = (int)$this->params->get('minLength', 0);
-        if (!$min < self::MIN_MIN) { $min = self::MIN_MIN;}
+        if ($min < self::MIN_MIN) { $min = self::MIN_MIN;}
         if ($max < $min) { $max = 0; }
 
         $lengthRange = "{".$min.",".($max?:'')."}";
